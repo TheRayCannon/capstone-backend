@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
 @RestController
-@RequestMapping("api/some-resources")
+@RequestMapping("breweries")
 public class BreweryController {
   @Autowired
   private BreweryService breweryService;

@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "brewery_table")
+@Table(name = "breweries")
 public class Brewery {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,11 +23,14 @@ public class Brewery {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "aminities")
-    private String aminities;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "beer_selection")
     private String beerSelection;
+
+    @Column(name = "aminities")
+    private String aminities;
 
     @Column(name = "website_url")
     private String websiteUrl;
@@ -35,6 +38,4 @@ public class Brewery {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "description")
-    private String description;
 }

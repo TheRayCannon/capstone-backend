@@ -29,7 +29,7 @@ public class Brewery {
     @Column(name = "beer_selection")
     private String beerSelection;
 
-    @Column(name = "aminities")
+    @Column(name = "amenities")
     private String aminities;
 
     @Column(name = "website_url")

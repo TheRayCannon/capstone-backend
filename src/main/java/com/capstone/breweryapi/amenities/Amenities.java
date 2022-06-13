@@ -1,4 +1,4 @@
-package com.capstone.breweryapi.beer;
+package com.capstone.breweryapi.amenities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +16,8 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "beer")
-public class Beer {
+@Table(name = "amenities")
+public class Amenities {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

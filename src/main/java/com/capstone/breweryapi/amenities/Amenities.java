@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import com.capstone.breweryapi.brewery.Brewery;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,5 +28,6 @@ public class Amenities {
 
     @ManyToOne
     @JoinColumn(name = "brewery_id")
+    @JsonIgnore
     private Brewery brewery;
 }

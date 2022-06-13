@@ -22,7 +22,26 @@ public class BreweryService {
         return breweryRepository.save(brewery);
     }
 
+    public Optional<Brewery> update(Brewery brewery) {
+        Optional<Brewery> foundResource = breweryRepository.findById(brewery.getId());
+
+        if (foundResource.isPresent()) {
+            Brewery updatedResource = foundResource.get();
+            updatedResource.setName(brewery.getName());
+            updatedResource.setImageUrl(brewery.getImageUrl());
+            updatedResource.setDescription(brewery.getDescription());
+            updatedResource.setWebsiteUrl(brewery.getWebsiteUrl());
+            updatedResource.setAddress(brewery.getAddress());
+
+            breweryRepository.save(updatedResource);
+            return Optional.of(updatedResource);
+        } else {
+            return Optional.empty();
+        }
+    }
+
     public void deleteById(Long id) {
         breweryRepository.deleteById(id);
     }
+
 }

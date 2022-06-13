@@ -40,4 +40,33 @@ public class BreweryController {
     return response;
   }
 
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  public Map<String, Brewery> create(@Validated @RequestBody Brewery brewery) {
+    Brewery createdResource = breweryService.create(brewery);
+    return createHashSingular(createdResource);
+  }
+
+  @PutMapping("/{id}")
+  @ResponseStatus(HttpStatus.CREATED)
+  public Map<String, Brewery> update(@RequestBody Brewery brewery, @PathVariable Long id) {
+    Brewery updatedResource = breweryService
+        .update(brewery)
+        .orElseThrow(() -> new ResourceNotFound("No resource with that ID"));
+
+    return createHashSingular(updatedResource);
+  }
+
+  @DeleteMapping("/{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void delete(@PathVariable Long id) {
+    breweryService.deleteById(id);
+  }
+
+  private Map<String, Brewery> createHashSingular(Brewery brewery) {
+    Map<String, Brewery> response = new HashMap<String, Brewery>();
+    response.put("brewery", brewery);
+
+    return response;
+  }
 }

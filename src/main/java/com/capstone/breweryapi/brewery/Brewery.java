@@ -33,12 +33,6 @@ public class Brewery {
     @Column(name = "description")
     private String description;
 
-    // @Column(name = "beer_selection")
-    // private String beerSelection;
-
-    // @Column(name = "amenities")
-    // private String amenities;
-
     @Column(name = "website_url")
     private String websiteUrl;
 
@@ -46,7 +40,7 @@ public class Brewery {
     private String address;
 
     @OneToMany(mappedBy = "brewery")
-    private List<Beer> beers;
+    private List<Beer> beer;
 
     @OneToMany(mappedBy = "brewery")
     private List<Amenities> amenities;

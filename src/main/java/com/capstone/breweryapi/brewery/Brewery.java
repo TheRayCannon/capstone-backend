@@ -51,4 +51,13 @@ public class Brewery {
     @Column(name = "alternate_option")
     private String alternateOption;
 
+    @Column(name = "amenity_one")
+    private String amenityOne;
+
+    @Column(name = "amenity_two")
+    private String amenityTwo;
+
+    @Column(name = "amenity_three")
+    private String amenityThree;
+
 }

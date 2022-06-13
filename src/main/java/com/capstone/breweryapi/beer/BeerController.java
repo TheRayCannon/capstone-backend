@@ -33,9 +33,9 @@ public class BeerController {
         return createHashPlural(beer);
     }
 
-    private Map<String, Iterable<Beer>> createHashPlural(Iterable<Beer> breweries) {
+    private Map<String, Iterable<Beer>> createHashPlural(Iterable<Beer> beers) {
         Map<String, Iterable<Beer>> response = new HashMap<String, Iterable<Beer>>();
-        response.put("breweries", breweries);
+        response.put("beers", beers);
 
         return response;
     }

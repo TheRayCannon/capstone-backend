@@ -28,6 +28,7 @@ public class AmenitiesService {
         if (foundResource.isPresent()) {
             Amenities updatedResource = foundResource.get();
             updatedResource.setName(amenities.getName());
+            updatedResource.setBrewery(amenities.getBrewery());
 
             amenitiesRepository.save(updatedResource);
             return Optional.of(updatedResource);

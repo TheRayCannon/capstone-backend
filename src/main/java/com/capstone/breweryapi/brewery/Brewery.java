@@ -5,7 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import java.util.List;
+
 import javax.persistence.Column;
+
+import com.capstone.breweryapi.amenities.Amenities;
+import com.capstone.breweryapi.beer.Beer;
 
 import lombok.Data;
 
@@ -26,16 +33,22 @@ public class Brewery {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "beer_selection")
-    private String beerSelection;
+    // @Column(name = "beer_selection")
+    // private String beerSelection;
 
-    @Column(name = "amenities")
-    private String amenities;
+    // @Column(name = "amenities")
+    // private String amenities;
 
     @Column(name = "website_url")
     private String websiteUrl;
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany(mappedBy = "brewery")
+    private List<Beer> beers;
+
+    @OneToMany(mappedBy = "brewery")
+    private List<Amenities> amenities;
 
 }

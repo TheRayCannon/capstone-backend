@@ -28,6 +28,7 @@ public class BeerService {
         if (foundResource.isPresent()) {
             Beer updatedResource = foundResource.get();
             updatedResource.setName(beer.getName());
+            updatedResource.setBrewery(beer.getBrewery());
 
             beerRepository.save(updatedResource);
             return Optional.of(updatedResource);

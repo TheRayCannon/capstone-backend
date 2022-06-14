@@ -1,8 +1,11 @@
 package com.capstone.breweryapi.brewery;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,18 @@ public class BreweryService {
 
     public Iterable<Brewery> list() {
         return breweryRepository.findAll();
+    }
+
+    public Map<String, Iterable<Brewery>> search(String searchTerm) {
+        Iterable<Brewery> breweries = breweryRepository.findAll();
+        List<Brewery> breweryList = new ArrayList<Brewery>();
+        breweries.forEach(breweryList::add);
+
+        breweryList.stream().filter(brewery -> {
+            return brewery.getName().equals(searchTerm);
+        }).collect(Collectors.toList());
+
+        return createHashPlural(breweries);
     }
 
     public Optional<Brewery> findById(Long id) {
@@ -28,6 +43,13 @@ public class BreweryService {
     private Map<String, Brewery> createHashSingular(Brewery brewery) {
         Map<String, Brewery> response = new HashMap<String, Brewery>();
         response.put("brewery", brewery);
+
+        return response;
+    }
+
+    private Map<String, Iterable<Brewery>> createHashPlural(Iterable<Brewery> breweries) {
+        Map<String, Iterable<Brewery>> response = new HashMap<String, Iterable<Brewery>>();
+        response.put("breweries", breweries);
 
         return response;
     }

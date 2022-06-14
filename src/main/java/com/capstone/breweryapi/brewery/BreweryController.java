@@ -43,8 +43,8 @@ public class BreweryController {
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public Map<String, Brewery> create(@Validated @RequestBody Brewery brewery) {
-    Brewery createdResource = breweryService.create(brewery);
-    return createHashSingular(createdResource);
+    return breweryService.create(brewery);
+
   }
 
   @PutMapping("/{id}")

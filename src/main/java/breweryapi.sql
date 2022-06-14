@@ -1,10 +1,10 @@
-TRUNCATE breweries;
+TRUNCATE TABLE breweries CASCADE;
 
 INSERT INTO
 breweries (id, name, image_url, description, beer_selection, amenities, website_url, address )
   VALUES
    
-( '1',
+( '100',
  'Brass Brewing Co.',
  ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmpqS73trY3lwFgdOTDaCbPPeoH4bXzzm7xA&usqp=CAU',
  'Located in the heart of downtown Colorado Springs, Brass Brewing Company is your low-key local hangout. That place where people from all walks of life, from all corners of the globe, come to gather and enjoy some fresh brews.',
@@ -12,7 +12,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
  '[Crowlers, pet friendly, family friendly]', 
  'https://www.brassbrewing.com',
  '318 E Colorado Ave. Colorado Springs, CO 80903'), 
- ('2',
+ ('200',
   'Cerberus Brewing Co.',
   ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXtOJ0DErEfaX8sKEivT3pC0NP0E-JiejgjQ&usqp=CAU',
   'A craft beer brewery & full restaurant on the West Side of Colorado Springs',
@@ -21,7 +21,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
   'https://www.cerberusbrewingco.com/',
   '702 W Colorado Ave. Colorado Springs, CO 80905' 
  ),
- (  '3',
+ (  '300',
     'Pikes Peak Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe_OAt1VPPJshMlXZjWE6UFqdB4gxnA3VQIw&usqp=CAU',
     'Established in Monument, Colorado brewery in 2011 as a place for our community to connect and come together. We believe the best beers are ones shared with friends and we hope that wherever you find a Pikes Peak Beer, it finds you in good company. In Aug, 2020 we opened the Lager House in Downtown Colorado Springs, producing the best lagers in Southern Colorado.',
@@ -31,7 +31,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '514 S. Tejon St., Colorado Springs, CO 80903'
  ),
  (
-    '4',
+    '400',
     'Battle Mt. Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTItrH1nIYBbYwLnrrB6RmnUbdZTZwnfgFQ&usqp=CAU',
     'We are a 4 BBL Brew House with a 1 BBL Pilot System to do experiments on. We will have 6 Flagship beers on hand with the intentions of filling our other taps with experimental and innovative creations. We work tirelessly to create top quality products while pushing the boundaries on what is in the market today.',
@@ -41,7 +41,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1007 S Tejon St Colorado Springs, CO 80903'
  ),
  (
-    '5',
+    '500',
     'Goat Patch Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX62k3rSDdA96gH_6vwyOOdsAumUA79qRmFQ&usqp=CAU',
     'Goat Patch Brewing Company started like all great ideas - good friends with a common passion sitting around a kitchen table. Before a name, location, recipes, or brand identity, we all agreed on a shared set of values: balanced brews, community engagement, and adventure. We are proud to play a large part in our community and provide Colorado Springs with masterfully crafted, balanced brews.',
@@ -51,7 +51,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2727 NORTH CASCADE AVENUE #123, COLORADO SPRINGS, CO. 80907'
  ),
  (
-    '6',
+    '600',
     'Mash Mechanix Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgSiOdRUaKk0fyUPrYeee-uUsADMMKIBXVg&usqp=CAU',
     'Mash Mechanix Brewing is open Mon, Tue, Wed, Thu, Fri, Sat, Sun.',
@@ -61,7 +61,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '429 E Pikes Peak Ave, Colorado Springs, Co. 80903'
  ),
  (
-    '7',
+    '700',
     'Red Swing Brewhouse',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFmi7siOuL1Iz2eboPVhjBVbnw_T6jOyPYtA&usqp=CAU',
     'Red Swing Brewhouse is about family, community, inspiration and innovation. Red Swing started from our own Red Swing, hung from our 50-year-old Maple Tree. Our belief that community relies on deep relationships and deep relationships create a strong bond. Our desire is to be a part of the community of Colorado Springs, with our beer, our culture, and our history.',
@@ -71,7 +71,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '521 S Tejon St, Colorado Springs, CO 80903'
  ),
  (
-    '8',
+    '800',
     'Whistle Pig Brewing Co.',
     'https://mir-s3-cdn-cf.behance.net/projects/404/18333101.548dc6c0112d5.jpg',
     'Whistle Pig Brewing has been proudly brewing up favorites for the last 6 years. Though our taproom may be new to the neighborhood, owners Rob Beers and Eric Merrell spent plenty of time on these streets. Both Palmer grads, and life long best friends, Eric and Rob believe in creating a community space where everyone feels welcome and they could not be happier to have the opportunity to bring that space back to their old hood.',
@@ -81,7 +81,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2117 Templeton Gap Rd, Colorado Springs, CO 80907'
  ),
  (
-    '9',
+    '900',
     'Metric Brewing ',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJDwudpLMvqat9GuSD20Cf4Jm0LrzzilChg&usqp=CAU',
     'Serving small batch craft beer and limited release styles in the Knob Hill Neighborhood. From clean lagers and funky sours to warm barrel aged offerings, we are rolling out new beers weekly.',
@@ -91,7 +91,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1213 N Circle Dr, Colorado Springs, CO 80909'
  ),
  (
-    '10',
+    '1000',
     'Storybook',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQda8cmkt5bxS_Pw-CVYliYgE9r4CEolxX3BA&usqp=CAU',
     'Storybook Brewing is a Colorado Springs based nano brewery with a 15 barrel brew house. All of our beers are hand crafted with the freshest ingredients.  We may be into fantasy, but we use real ingredients.',
@@ -101,7 +101,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '3121 A N, N El Paso St, Colorado Springs, CO 80907'
  ),
  (
-    '11',
+    '1100',
     'Fossil Craft Beer Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3W2SzE--3ezv4ZL1NQhMXMBUYX77FV8Ik_Q&usqp=CAU',
     'We are a community-centric microbrewery in Colorado Springs, on the West Side of town. We are a locally-focused group of 5 that are working with locals first, resorting to organizations outside of our geographic area only as truly needed. We have 8 taps, 7 of which are beer and the 8th is a hand-crafted ginger ale (non-alcoholic). There are several food trucks on our calendar and plenty of delivery services around, so come by for some local food and drink!',
@@ -111,7 +111,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2845 Ore Mill Rd #1, Colorado Springs, CO 80904'
  ),
  (
-    '12',
+    '1200',
     'Colorado Mountain Brewery',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWv_dllu8IPzFebeZAZ6-vkrXsb7R9u3Jl5g&usqp=CAU',
     'Colorado Mountain Brewery is “The True Taste Of Colorado™”! We invite you to come on in to try one of our award-winning 14-er Burgers, Colorado themed appetizers, or any of our mouthwatering entrees.',
@@ -121,7 +121,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1110 Interquest Pkwy, Colorado Springs, CO 80921 & 600 S. 21st St. Colorado Springs, CO 80904'
  ),
  (
-    '13',
+    '1300',
     'Smiling Toad',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XxdSs3opCQ0ylUw4lUbRNNWQWBlwjZx10A&usqp=CAU',
     'The Smiling Toad is located on the corner of Sheldon Ave and 21st street just one block north of Highway 24. The original “Toad” was out east on Bijou St. before moving to the west side location on 8th St. After a few years there, we purchased the old Thirsty’s Tavern and renovated it to make one of the largest brewery taprooms in Colorado Springs.',
@@ -131,7 +131,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2028 Sheldon Ave, Colorado Springs, CO 80904'
  ),
  (
-    '14',
+    '1400',
     'Atrevida Beer Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ2xPW1npCUg7DE3OMigLSFnDSkubNC4-xUg&usqp=CAU',
     'Our team Atrevida Beer Co is demonstrating diversity in everything it does.  The company motto is “Diversity, it’s on tap!” and we live by this motto.  4 of our 6 employees are women. 4 of our 6 employees are Latinos.  The owners Jess & Rich Fierro are both Latino’s, and a former Military family. Rich is a former 15-year Army officer with 4 combat tours having arrived in Colorado Springs in 2007.  They have been married for 20 years and have 2 children Ricky and Kassy.',
@@ -141,7 +141,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '204 Mount View Lane, Suite 3 Colorado Springs, CO 80907'
  ),
  (
-    '15',
+    '1500',
     'Deuces Wild Brewery',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWeiauOrS1QS208NL0QQ9wWyMIVviaN-aXOQ&usqp=CAU',
     'Home of the 2019, Great American Beer Festival Gold Medal winning, Knuckle Dragger, Scotch ale.',
@@ -151,7 +151,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '660 Peterson Road. Colorado Springs, CO'
  ),
  (
-    '16',
+    '1600',
     'Red Leg Brewery',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9-Qa7jA8hXiV3pp2-VUH5LYBQGw_qG6MRNg&usqp=CAU',
     'Veteran-owned & operated, this craft brewery offers a taproom with food trucks often parked outside.',
@@ -161,7 +161,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2323 Garden of the Gods Rd, Colorado Springs, CO 80907'
  ),
  (
-    '17',
+    '1700',
     'Cogstone Brewing',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetFRL_MtmwT0IgdcndVFTobJNBYB4uM63Zw&usqp=CAU',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetFRL_MtmwT0IgdcndVFTobJNBYB4uM63Zw&usqp=CAU',
@@ -171,7 +171,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '3858 Village 7 Rd, Colorado Springs, CO 80917'
  ),
  (
-    '18',
+    '1800',
     'Trinity Brewing',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_yGZ-wuK3UkIA8LhCqxBVg93B8uUCufxuwg&usqp=CAU',
     'Come thirsty! We have 41 TRiNiTY “brewed-in-house” beers on draft and bottles from our cellar collection to choose from. We also serve Colorado draft hard-cider (gluten-free), and a wide range of wines, bourbons, tequilas, and our own collection of brewery cocktails.',
@@ -181,7 +181,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1466 Garden of the Gods Rd, Colorado Springs, CO 80907'
  ),
  (
-    '19',
+    '1900',
     'Lost Friends Brewing',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw66QxTz5iLv2YNg01tuoIJ1DE8wiKo27aUQ&usqp=CAU',
     'We are a woman and veteran owned craft beer brewery located in northeastern Colorado Springs, colorado. We pride ourselves on being very dog friendly, though we also welcome other well-behaved, leashed pets. We even have carabiners on our tables to hold your leashes, leaving your hands free for enjoying a beer while playing a board game or reading a book. Our sunlit taproom and killer view of Pikes Peak invites you to relax and stay a while. We host local food trucks each day which change frequently. Follow us on social media to see weekly food truck schedules.',
@@ -191,7 +191,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2458 Montebello Square Dr, Colorado Springs, CO 80918'
  ),
  (
-    '20',
+    '2000',
     'Bell Brothers Brewing',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnbjqsRVSjrazwVPU7N1shYJt1IFvMrlCylg&usqp=CAU',
     'Step into our science-inspired brewery and treat yourself to an expertly engineered beer. From light lagers to IPAs to stouts, we carefully design and execute each batch on our 3-barrel system so we can bring you the best beers science has to offer.',
@@ -201,7 +201,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '114 N Tejon St #100, Colorado Springs, CO 80903'
  ),
  (
-    '21',
+    '2100',
     'Oskar Blues Grill & Brew',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDku-8Bmsiu8IVmpQnHD52L9pe15AISsRkHA&usqp=CAU',
     'Oskar’s Lager aims to be the everyday craft beer you count on through thick and thin.',
@@ -211,7 +211,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '118 N Tejon St, Colorado Springs, CO 80903 '
  ),
  (
-    '22',
+    '2200',
     'Nano 108 Brewery',
     'https://utfb-images.untappd.com/edzoh87r8fjrmvq5vvekaskbx0cq?auto=compress',
     'Since 2013, we have been providing Colorado Springs with a constantly rotating seasonal menu featuring barrel aged beers and various styles from around the world.  Our head brewer Zach is working hard to create exciting new beers to try every day, week, month and season! The one thing that stays the same at Nano 108 Brewing is that the menu will always be changing so stay up to date by subscribing on Untappd! They say if you haven’t been to Nano 108 recently, you haven’t been to Nano 108! See you soon! Cheers!',
@@ -221,7 +221,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2402 Waynoka Rd Colorado Springs, CO 80915'
  ),
  (
-    '23',
+    '2300',
     'Rocky Mountain Brewery',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbupTMnsfZWr5lbjj0VcjHkwn60DDCz7ZoGw&usqp=CAU',
     'Whether you are here to enjoy a cold one, enjoy trivia night, live music, or have a great BBQ meal from Bz’s BBQ, you will find that our choice of beer is simply unbeatable. We have won awards that decorate the walls for a reason. We are and will always be master brewers who tempt your palate and tantalize your senses. Come see what we have on tap right now.',
@@ -231,7 +231,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '625 Paonia St.Colorado Springs, CO 80915'
  ),
  (
-    '24',
+    '2400',
     'FH Beerworks',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRfLsuuydQSJkZpgSKSN9R_P6BKgFm0lVjIA&usqp=CAU',
     'We are open for dine-in and patio service seven days a week and have a 6,000 sq. ft. beer garden',
@@ -241,7 +241,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '2490 N Powers, Frontage Rd, Colorado Springs, CO 80915'
  ),
  (
-    '25',
+    '2500',
     'Peaks N Pines Brewery',
     'https://www.coloradobrewerylist.com/wp-content/uploads/2015/05/peaks-and-pines.png',
     'This is it, Peaks N Pines first child.  The taproom that started it all.  Peaks N Pines - Tutt became one of Eastern Colorado Springs first breweries in November of 2015.  Since then it has been a warming community pub with tight walls filled with laugher, friendships, and memories.',
@@ -251,7 +251,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '4005 Tutt Blvd Colorado Springs, Colorado'
  )
  ,(
-    '26',
+    '2600',
     'Rock Bottom Restaurant & Brewery',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5HSab6fEMf0jBQ-Utrxnq6Pchltwn86F2uA&usqp=CAU',
     'Upscale brewpub chain serving house beers & imaginative pub food in lively environs.',
@@ -261,7 +261,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '3316 Cinema Point, Colorado Springs, CO 80922'
  ),
  (
-    '27',
+    '2700',
     'Manitou Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCK_Mo7da1_dP196l5P3AMhp8Rdv83nEzFA&usqp=CAU',
     'We are a small brewpub located in historic Manitou Springs, first opening our doors in March 2014. Sitting at the base of Pikes Peak, we are the closest brewery to its splendor. All of our beer is born from the pristine waters located near the top of the peak. We are proud to use organic, Colorado grown & malted barley in our beers.',
@@ -271,7 +271,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '725 Manitou Ave, Manitou Springs, CO 80829'
  ),
  (
-    '28',
+    '2800',
     'Trails End Taproom',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ztrbHX5SoC72VCbOkLZ_GCNLCINTCjmLjg&usqp=CAU',
     'Trails End is a modern self-pour taproom that focuses on serving local and global craft beer, cider , wine and kombucha.  Tired of ordering a beer just to find out you don’t really like it, even know what you like? At Trails End Taproom, just try a few ounces then try something else - you only pay by the ounce. Itis like a beer fest everyday!',
@@ -281,7 +281,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '3103 W Colorado Ave, Colorado Springs, CO 80904 '
  ),
  (
-    '29',
+    '2900',
     'Black Forest Brewing Co.',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCVqAxOj3VSPyhpK8p8OiUl1L44Yr5mykS7Q&usqp=CAU',
     'Located in the heart of Black Forest, it is our mission to become the local place where everyone can come together and celebrate everyday life. At the Black Forest Brewing Co., you can enjoy unique brews in a unique space—pieced together by contributions from the Black Forest community. Choose from any of our in-house brews, or try one of our neighbor’s taps, wines, and spirits. We always have a great selection of local food options for you to enjoy with your drinks! Bring your friends, bring your family, and come enjoy a drink with your neighbors.',
@@ -291,7 +291,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '11590 Black Forest Rd Ste 50, Colorado Springs, CO 80908 '
  ),
  (
-    '30',
+    '30000',
     'JAKs Brewery & taproom',
     ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBasrZuXEv9bQmEtEG4kiR54wHbwl4nwxt7g&usqp=CAU',
     'The motto of JAKs Brewing Company is meant to bring a smile to your face, but it has a far deeper meaning.  Just as our name refers to our founders (Jeff, Antonio and Ken), our logo’s red star and the unit emblems and photos on our walls all point to the rich heritage, culture and sense of belonging that so characterizes the Air Force family.',
@@ -301,7 +301,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '7715 Dublin Blvd #160, Colorado Springs, CO 80923'
  ),
  (
-    '31',
+    '3100',
     'Wackadoo Brewing',
     'https://lh5.googleusercontent.com/p/AF1QipOeT0eUecJsjMamaxyXQJC55rr0UbDRLvJUPqem=w408-h408-k-no',
     ' We decided it was time to do something spectacular together, building a company from nothing and watch it grow into something to be remembered. A place people can come together and enjoy a lovingly crafted beer in a environment that is fun and free to enjoy company and games. Come along with us on this journey and be a part of something bigger then any of us.',
@@ -311,7 +311,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '5158 Centennial Blvd, Colorado Springs, CO 80919'
  ),
  (
-    '32',
+    '3200',
     'BJ Restaurant & Brewhouse',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStMajiyUuziYagmitHIET5Eh5GBTH-jd1ozg&usqp=CAU',
     'Family-friendly chain outpost pairs familiar pub fare with an extensive list of house brews.',
@@ -321,7 +321,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '5150 North Nevada Avenue Colorado Springs, CO 80918'
  ),
  (
-    '33',
+    '3300',
     'Boxing Brothers Ciderhouse',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCldhQiQruo-qQOH8llu1rvEvwFkKwHdxhnA&usqp=CAU',
     'Boxing Brothers Hard apple cider is delicious straight out of the can, poured over ice, or in "Cider-Cocktails" here are a few of our favorite recipes. Try them out and experiment new "Cider-cocktails" for yourself! Remember to have fun and please drink responsibly',
@@ -331,7 +331,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '4655 Town Center Dr #130, Colorado Springs, CO 80916'
  ),
  (
-    '34',
+    '3400',
     'Ivywild School, Bristol Brewing',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP7Tao98_mhY33RrH4sHYGSAKdMTHPRyRGvw&usqp=CAU',
     'Bustling, atmospheric local brewery & pub in a former school offering tours, craft beers & more.',
@@ -341,7 +341,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1604 S Cascade Ave, Colorado Springs, CO 80905'
  ),
  (
-    '35',
+    '3500',
     'Happy Tap',
     'https://happytaptaproom.github.io/img/logo.JPG',
     'We are a friendly neighborhood bar with award winning and fan favorite beers on draft fit to satisfy any and all beer lovers as well as a diverse collection of fine wines and seltzers.',
@@ -351,7 +351,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '1757 S 8th St Colorado Springs, CO 80906'
  ),
  (
-    '36',
+    '3600',
     'BATCH Slapped Brewery',
     ' https://www.coloradobrewerylist.com/wp-content/uploads/2020/09/BatchSlapped.jpg',
     'We are small batch brewery and cidery that specializes in off the wall flavors that are sure to slap.',
@@ -361,7 +361,7 @@ breweries (id, name, image_url, description, beer_selection, amenities, website_
     '5859 Palmer Park Blvd, Colorado Springs, CO 80915'
  ),
  (
-    '37',
+    '3700',
     'Beasts & Brews',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-SXNbJFsH_uANB-Dq_j1Hp-97G17qFo2E1w&usqp=CAU',
     'Beasts & Brews is a taphouse and restaurant focused on creating community and supporting our local businesses through partnerships and product use.',

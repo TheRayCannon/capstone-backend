@@ -1,5 +1,7 @@
 package com.capstone.breweryapi.brewery;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +20,16 @@ public class BreweryService {
         return breweryRepository.findById(id);
     }
 
-    public Brewery create(Brewery brewery) {
-        return breweryRepository.save(brewery);
+    public Map<String, Brewery> create(Brewery brewery) {
+        Brewery savedbrewery = breweryRepository.save(brewery);
+        return createHashSingular(savedbrewery);
+    }
+
+    private Map<String, Brewery> createHashSingular(Brewery brewery) {
+        Map<String, Brewery> response = new HashMap<String, Brewery>();
+        response.put("brewery", brewery);
+
+        return response;
     }
 
     public Optional<Brewery> update(Brewery brewery) {

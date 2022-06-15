@@ -15,20 +15,20 @@ public class BreweryService {
     @Autowired
     private BreweryRepository breweryRepository;
 
-    public Iterable<Brewery> list() {
-        return breweryRepository.findAll();
+    public Map<String, Iterable<Brewery>> list() {
+        Iterable<Brewery> breweries = breweryRepository.findAll();
+        return createHashPlural(breweries);
     }
 
-    public Map<String, Iterable<Brewery>> search(String searchTerm) {
+    public Map<String, Iterable<Brewery>> search(String searchName) {
         Iterable<Brewery> breweries = breweryRepository.findAll();
-        List<Brewery> breweryList = new ArrayList<Brewery>();
-        breweries.forEach(breweryList::add);
+        List<Brewery> breweriesList = new ArrayList<Brewery>();
+        breweries.forEach(breweriesList::add);
 
-        breweryList.stream().filter(brewery -> {
-            return brewery.getName().equals(searchTerm);
+        List<Brewery> filteredBreweies = breweriesList.stream().filter(brewery -> {
+            return brewery.getName().equals(searchName);
         }).collect(Collectors.toList());
-
-        return createHashPlural(breweries);
+        return createHashPlural(filteredBreweies);
     }
 
     public Optional<Brewery> findById(Long id) {

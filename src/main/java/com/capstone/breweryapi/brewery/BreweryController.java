@@ -30,15 +30,13 @@ public class BreweryController {
   @GetMapping("/search")
   @ResponseStatus(HttpStatus.OK)
   public Map<String, Iterable<Brewery>> search(@RequestParam String search) {
-    Iterable<Brewery> brewery = breweryService.search(search);
-    return createHashPlural(brewery);
+    return breweryService.search(search);
   }
 
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
   public Map<String, Iterable<Brewery>> list() {
-    Iterable<Brewery> brewery = breweryService.list();
-    return createHashPlural(brewery);
+    return breweryService.list();
   }
 
   private Map<String, Iterable<Brewery>> createHashPlural(Iterable<Brewery> breweries) {

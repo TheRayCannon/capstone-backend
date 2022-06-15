@@ -36,20 +36,24 @@ public class BreweryController {
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
   public Map<String, Iterable<Brewery>> list() {
-    return breweryService.list();
+    Iterable<Brewery> breweries = breweryService.list();
+    return createHashPlural(breweries);
   }
 
-  private Map<String, Iterable<Brewery>> createHashPlural(Iterable<Brewery> breweries) {
-    Map<String, Iterable<Brewery>> response = new HashMap<String, Iterable<Brewery>>();
-    response.put("breweries", breweries);
-
-    return response;
+  @GetMapping("/{id}")
+  @ResponseStatus(HttpStatus.OK)
+  public Map<String, Brewery> read(@PathVariable Long id) {
+    Brewery brewery = breweryService
+        .findById(id)
+        .orElseThrow(() -> new ResourceNotFound("No brewery with that ID"));
+    return createHashSingular(brewery);
   }
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public Map<String, Brewery> create(@Validated @RequestBody Brewery brewery) {
-    return breweryService.create(brewery);
+    Brewery createdBrewery = breweryService.create(brewery);
+    return createHashSingular(createdBrewery);
 
   }
 
@@ -72,6 +76,13 @@ public class BreweryController {
   private Map<String, Brewery> createHashSingular(Brewery brewery) {
     Map<String, Brewery> response = new HashMap<String, Brewery>();
     response.put("brewery", brewery);
+
+    return response;
+  }
+
+  private Map<String, Iterable<Brewery>> createHashPlural(Iterable<Brewery> breweries) {
+    Map<String, Iterable<Brewery>> response = new HashMap<String, Iterable<Brewery>>();
+    response.put("breweries", breweries);
 
     return response;
   }

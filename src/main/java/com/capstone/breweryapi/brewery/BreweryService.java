@@ -15,9 +15,8 @@ public class BreweryService {
     @Autowired
     private BreweryRepository breweryRepository;
 
-    public Map<String, Iterable<Brewery>> list() {
-        Iterable<Brewery> breweries = breweryRepository.findAll();
-        return createHashPlural(breweries);
+    public Iterable<Brewery> list() {
+        return breweryRepository.findAll();
     }
 
     public Map<String, Iterable<Brewery>> search(String searchName) {
@@ -26,7 +25,25 @@ public class BreweryService {
         breweries.forEach(breweriesList::add);
 
         List<Brewery> filteredBreweies = breweriesList.stream().filter(brewery -> {
-            return brewery.getName().equals(searchName);
+            String breweryName = brewery.getName().toLowerCase();
+            // String ipa = brewery.getIpaOption().toLowerCase();
+            // String sour = brewery.getSourOption().toLowerCase();
+            // String stout = brewery.getStoutOption().toLowerCase();
+            // String belgian = brewery.getBelgianOption().toLowerCase();
+            // String amenityOne = brewery.getAmenityOne().toLowerCase();
+            // String amenityTwo = brewery.getAmenityTwo().toLowerCase();
+            // String amenityThree = brewery.getAmenityThree().toLowerCase();
+            String search = searchName.toLowerCase();
+
+            return breweryName.equals(search);
+            // || ipa.contains(search)
+            // || sour.contains(search)
+            // || stout.contains(search)
+            // || belgian.contains(search)
+            // || amenityOne.equals(search)
+            // || amenityTwo.equals(search)
+            // || amenityThree.equals(search);
+
         }).collect(Collectors.toList());
         return createHashPlural(filteredBreweies);
     }
@@ -35,16 +52,8 @@ public class BreweryService {
         return breweryRepository.findById(id);
     }
 
-    public Map<String, Brewery> create(Brewery brewery) {
-        Brewery savedbrewery = breweryRepository.save(brewery);
-        return createHashSingular(savedbrewery);
-    }
-
-    private Map<String, Brewery> createHashSingular(Brewery brewery) {
-        Map<String, Brewery> response = new HashMap<String, Brewery>();
-        response.put("brewery", brewery);
-
-        return response;
+    public Brewery create(Brewery brewery) {
+        return breweryRepository.save(brewery);
     }
 
     private Map<String, Iterable<Brewery>> createHashPlural(Iterable<Brewery> breweries) {
@@ -55,18 +64,27 @@ public class BreweryService {
     }
 
     public Optional<Brewery> update(Brewery brewery) {
-        Optional<Brewery> foundResource = breweryRepository.findById(brewery.getId());
+        Optional<Brewery> foundBrewery = breweryRepository.findById(brewery.getId());
 
-        if (foundResource.isPresent()) {
-            Brewery updatedResource = foundResource.get();
-            updatedResource.setName(brewery.getName());
-            updatedResource.setImageUrl(brewery.getImageUrl());
-            updatedResource.setDescription(brewery.getDescription());
-            updatedResource.setWebsiteUrl(brewery.getWebsiteUrl());
-            updatedResource.setAddress(brewery.getAddress());
+        if (foundBrewery.isPresent()) {
+            Brewery updatedBrewery = foundBrewery.get();
+            updatedBrewery.setName(brewery.getName());
+            updatedBrewery.setImageUrl(brewery.getImageUrl());
+            updatedBrewery.setDescription(brewery.getDescription());
+            updatedBrewery.setWebsiteUrl(brewery.getWebsiteUrl());
+            updatedBrewery.setAddress(brewery.getAddress());
+            updatedBrewery.setIpaOption(brewery.getIpaOption());
+            updatedBrewery.setSourOption(brewery.getSourOption());
+            updatedBrewery.setStoutOption(brewery.getStoutOption());
+            updatedBrewery.setWheatOption(brewery.getWheatOption());
+            updatedBrewery.setBelgianOption(brewery.getBelgianOption());
+            updatedBrewery.setAlternateOption(brewery.getAlternateOption());
+            updatedBrewery.setAmenityOne(brewery.getAmenityOne());
+            updatedBrewery.setAmenityTwo(brewery.getAmenityTwo());
+            updatedBrewery.setAmenityThree(brewery.getAmenityThree());
 
-            breweryRepository.save(updatedResource);
-            return Optional.of(updatedResource);
+            breweryRepository.save(updatedBrewery);
+            return Optional.of(updatedBrewery);
         } else {
             return Optional.empty();
         }

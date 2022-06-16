@@ -26,23 +26,25 @@ public class BreweryService {
 
         List<Brewery> filteredBreweies = breweriesList.stream().filter(brewery -> {
             String breweryName = brewery.getName().toLowerCase();
-            // String ipa = brewery.getIpaOption().toLowerCase();
-            // String sour = brewery.getSourOption().toLowerCase();
-            // String stout = brewery.getStoutOption().toLowerCase();
-            // String belgian = brewery.getBelgianOption().toLowerCase();
-            // String amenityOne = brewery.getAmenityOne().toLowerCase();
-            // String amenityTwo = brewery.getAmenityTwo().toLowerCase();
-            // String amenityThree = brewery.getAmenityThree().toLowerCase();
+            String ipa = brewery.getIpaOption().toLowerCase();
+            String sour = brewery.getSourOption().toLowerCase();
+            String stout = brewery.getStoutOption().toLowerCase();
+            String belgian = brewery.getBelgianOption().toLowerCase();
+            String alternate = brewery.getAlternateOption().toLowerCase();
+            String amenityOne = brewery.getAmenityOne().toLowerCase();
+            String amenityTwo = brewery.getAmenityTwo().toLowerCase();
+            String amenityThree = brewery.getAmenityThree().toLowerCase();
             String search = searchName.toLowerCase();
-
-            return breweryName.equals(search);
-            // || ipa.contains(search)
-            // || sour.contains(search)
-            // || stout.contains(search)
-            // || belgian.contains(search)
-            // || amenityOne.equals(search)
-            // || amenityTwo.equals(search)
-            // || amenityThree.equals(search);
+            System.out.println(breweryName.equals(search));
+            return breweryName.contains(search)
+                    || ipa.contains(search)
+                    || sour.contains(search)
+                    || stout.contains(search)
+                    || belgian.contains(search)
+                    || alternate.contains(search)
+                    || amenityOne.contains(search)
+                    || amenityTwo.contains(search)
+                    || amenityThree.contains(search);
 
         }).collect(Collectors.toList());
         return createHashPlural(filteredBreweies);

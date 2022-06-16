@@ -1,7 +1,7 @@
 TRUNCATE TABLE breweries CASCADE;
 
 INSERT INTO
-breweries (id, name, image_url, description, ipa_option, sour_option,stout_option, amenity_one,amenity_two, website_url, address )
+breweries (id, name, image_url, description, ipa_option, sour_option, stout_option, wheat_option, belgian_option, alternate_option, amenity_one, amenity_two, amenity_three, website_url, address )
   VALUES
    
 ( '100',
@@ -11,8 +11,12 @@ breweries (id, name, image_url, description, ipa_option, sour_option,stout_optio
  'Through the Clouds IPA',
  'A Brief History of Time Red Ale',
 'Naughty List Stout',
+'A thick wheat',
+'Not a bud Light',
+'SomethingElse',
  'Crowlers',
  'pet friendly',
+ 'poker nights',
  'https://www.brassbrewing.com',
  '318 E Colorado Ave. Colorado Springs, CO 80903'), 
  ('200',
@@ -22,7 +26,11 @@ breweries (id, name, image_url, description, ipa_option, sour_option,stout_optio
   'Hero Protagonist Brut Yuzu Rice Kolsch',
    'The Dale High End Lager', 
    'Obi-Wan Oleson',
+   'A thick wheat',
+'Not a bud Light',
+'SomethingElse',
    'full menu',
+   'Poker Night',
    'patio seating',
   'https://www.cerberusbrewingco.com/',
   '702 W Colorado Ave. Colorado Springs, CO 80905' 
@@ -34,8 +42,12 @@ breweries (id, name, image_url, description, ipa_option, sour_option,stout_optio
     'Thin Air Session IPA',
     'Gold',
     'Elephant Rock IPA',
+    'A thick wheat',
+'Not a bud Light',
+'SomethingElse',
     'bingo night',
     ' Trivia',
+    'crowlers',
     'https://www.pikespeakbrewing.com/',
     '514 S. Tejon St., Colorado Springs, CO 80903'
  ),
@@ -47,8 +59,12 @@ breweries (id, name, image_url, description, ipa_option, sour_option,stout_optio
     'Singing Canary IPA',
      'Rocker Box Red Ale',
      'Peanut Butter Stout',
-     'full menu',
-     'trivia nights',
-    'https://battlemountainbrewing.com',
-    '1007 S Tejon St Colorado Springs, CO 80903'
+     'A thick wheat',
+      'Not a bud Light',
+      'SomethingElse',
+      'full menu',
+      'trivia nights',
+      'pet friendly',
+      'https://battlemountainbrewing.com',
+      '1007 S Tejon St Colorado Springs, CO 80903'
  );

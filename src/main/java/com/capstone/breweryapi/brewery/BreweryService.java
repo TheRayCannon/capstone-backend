@@ -35,7 +35,6 @@ public class BreweryService {
             String amenityTwo = brewery.getAmenityTwo().toLowerCase();
             String amenityThree = brewery.getAmenityThree().toLowerCase();
             String search = searchName.toLowerCase();
-            System.out.println(breweryName.equals(search));
             return breweryName.contains(search)
                     || ipa.contains(search)
                     || sour.contains(search)
